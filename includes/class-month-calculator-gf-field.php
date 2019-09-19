@@ -4,12 +4,12 @@ if ( ! class_exists( 'GFForms' ) ) {
 	die();
 }
 
-class Simple_GF_Field extends GF_Field {
+class Month_Calculator_GF_Field extends GF_Field {
 
 	/**
 	 * @var string $type The field type.
 	 */
-	public $type = 'simple';
+	public $type = 'month-calculator';
 
 	/**
 	 * Return the field title, for use in the form editor.
@@ -17,7 +17,7 @@ class Simple_GF_Field extends GF_Field {
 	 * @return string
 	 */
 	public function get_form_editor_field_title() {
-		return esc_attr__( 'Simple', 'simplefieldaddon' );
+		return esc_attr__( 'Month Calculator', 'gf-month-calculator' );
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Simple_GF_Field extends GF_Field {
 	 */
 	public function get_form_editor_inline_script_on_page_render() {
 
-		// set the default field label for the simple type field
+		// set the default field label for the month-calculator type field
 		$script = sprintf( "function SetDefaultValues_simple(field) {field.label = '%s';}", $this->get_form_editor_field_title() ) . PHP_EOL;
 
 		// initialize the fields custom settings
@@ -78,7 +78,7 @@ class Simple_GF_Field extends GF_Field {
 		           "jQuery('#input_class_setting').val(inputClass);" .
 		           "});" . PHP_EOL;
 
-		// saving the simple setting
+		// saving the month-calculator setting
 		$script .= "function SetInputClassSetting(value) {SetFieldProperty('inputClass', value);}" . PHP_EOL;
 
 		return $script;
@@ -127,4 +127,4 @@ class Simple_GF_Field extends GF_Field {
 	}
 }
 
-GF_Fields::register( new Simple_GF_Field() );
+GF_Fields::register( new Month_Calculator_GF_Field() );

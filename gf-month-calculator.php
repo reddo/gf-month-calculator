@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Gravity Forms Simple Field Add-On
+Plugin Name: Gravity Forms Month Calculator Field Add-On
 Plugin URI: http://www.gravityforms.com
 Description: A simple add-on to demonstrate how to use the Add-On Framework to include a new field type.
 Version: 1.0
 Author: Rocketgenius
 Author URI: http://www.rocketgenius.com
-Text Domain: simplefieldaddon
+Text Domain: gf-month-calculator
 Domain Path: /languages
 
 ------------------------------------------------------------------------
@@ -39,7 +39,7 @@ class GF_Simple_Field_AddOn_Bootstrap {
             return;
         }
 
-        require_once( 'class-gfsimplefieldaddon.php' );
+        require_once( 'class-gfmonth-calculator.php' );
 
         GFAddOn::register( 'GFSimpleFieldAddOn' );
     }

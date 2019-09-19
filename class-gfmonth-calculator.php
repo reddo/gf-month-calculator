@@ -6,11 +6,11 @@ class GFSimpleFieldAddOn extends GFAddOn {
 
 	protected $_version = GF_SIMPLE_FIELD_ADDON_VERSION;
 	protected $_min_gravityforms_version = '1.9';
-	protected $_slug = 'simplefieldaddon';
-	protected $_path = 'simplefieldaddon/simplefieldaddon.php';
+	protected $_slug = 'gf-month-calculator';
+	protected $_path = 'gf-month-calculator/gf-month-calculator.php';
 	protected $_full_path = __FILE__;
-	protected $_title = 'Gravity Forms Simple Field Add-On';
-	protected $_short_title = 'Simple Field Add-On';
+	protected $_title = 'Gravity Forms Month Calculator Field Add-On';
+	protected $_short_title = 'Month Calculator Field Add-On';
 
 	/**
 	 * @var object $_instance If available, contains an instance of this class.
@@ -37,7 +37,7 @@ class GFSimpleFieldAddOn extends GFAddOn {
 		parent::pre_init();
 
 		if ( $this->is_gravityforms_supported() && class_exists( 'GF_Field' ) ) {
-			require_once( 'includes/class-simple-gf-field.php' );
+			require_once( 'includes/class-month-calculator-gf-field.php' );
 		}
 	}
 
@@ -52,19 +52,19 @@ class GFSimpleFieldAddOn extends GFAddOn {
 	// # SCRIPTS & STYLES -----------------------------------------------------------------------------------------------
 
 	/**
-	 * Include my_script.js when the form contains a 'simple' type field.
+	 * Include month-calculator-script.js when the form contains a 'month-calculator' type field.
 	 *
 	 * @return array
 	 */
 	public function scripts() {
 		$scripts = array(
 			array(
-				'handle'  => 'my_script_js',
-				'src'     => $this->get_base_url() . '/js/my_script.js',
+				'handle'  => 'month_calculator_script_js',
+				'src'     => $this->get_base_url() . '/js/month-calculator-script.js',
 				'version' => $this->_version,
 				'deps'    => array( 'jquery' ),
 				'enqueue' => array(
-					array( 'field_types' => array( 'simple' ) ),
+					array( 'field_types' => array( 'month-calculator' ) ),
 				),
 			),
 
@@ -74,7 +74,7 @@ class GFSimpleFieldAddOn extends GFAddOn {
 	}
 
 	/**
-	 * Include my_styles.css when the form contains a 'simple' type field.
+	 * Include month-calculator-styles.css when the form contains a 'month-calculator' type field.
 	 *
 	 * @return array
 	 */
@@ -82,10 +82,10 @@ class GFSimpleFieldAddOn extends GFAddOn {
 		$styles = array(
 			array(
 				'handle'  => 'my_styles_css',
-				'src'     => $this->get_base_url() . '/css/my_styles.css',
+				'src'     => $this->get_base_url() . '/css/month-calculator-styles.css',
 				'version' => $this->_version,
 				'enqueue' => array(
-					array( 'field_types' => array( 'simple' ) )
+					array( 'field_types' => array( 'month-calculator' ) )
 				)
 			)
 		);
@@ -105,14 +105,14 @@ class GFSimpleFieldAddOn extends GFAddOn {
 	 */
 	public function tooltips( $tooltips ) {
 		$simple_tooltips = array(
-			'input_class_setting' => sprintf( '<h6>%s</h6>%s', esc_html__( 'Input CSS Classes', 'simplefieldaddon' ), esc_html__( 'The CSS Class names to be added to the field input.', 'simplefieldaddon' ) ),
+			'input_class_setting' => sprintf( '<h6>%s</h6>%s', esc_html__( 'Input CSS Classes', 'gf-month-calculator' ), esc_html__( 'The CSS Class names to be added to the field input.', 'gf-month-calculator' ) ),
 		);
 
 		return array_merge( $tooltips, $simple_tooltips );
 	}
 
 	/**
-	 * Add the custom setting for the Simple field to the Appearance tab.
+	 * Add the custom setting for the Month Calculator field to the Appearance tab.
 	 *
 	 * @param int $position The position the settings should be located at.
 	 * @param int $form_id The ID of the form currently being edited.
@@ -123,7 +123,7 @@ class GFSimpleFieldAddOn extends GFAddOn {
 			?>
 			<li class="input_class_setting field_setting">
 				<label for="input_class_setting">
-					<?php esc_html_e( 'Input CSS Classes', 'simplefieldaddon' ); ?>
+					<?php esc_html_e( 'Input CSS Classes', 'gf-month-calculator' ); ?>
 					<?php gform_tooltip( 'input_class_setting' ) ?>
 				</label>
 				<input id="input_class_setting" type="text" class="fieldwidth-1" onkeyup="SetInputClassSetting(jQuery(this).val());" onchange="SetInputClassSetting(jQuery(this).val());"/>
