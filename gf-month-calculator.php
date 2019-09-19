@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms Month Calculator Field Add-On
 Plugin URI: http://www.gravityforms.com
 Description: An addon to add mont calculator fields to Gravity Forms
-Version: 1.0
+Version: 1.0.1
 Author: reddo
 Author URI: http://birdcreation.com
 Text Domain: gf-month-calculator
