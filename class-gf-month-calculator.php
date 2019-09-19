@@ -2,7 +2,7 @@
 
 GFForms::include_addon_framework();
 
-class GFSimpleFieldAddOn extends GFAddOn {
+class GFMonthCalculatorFieldAddOn extends GFAddOn {
 
 	protected $_version = GF_SIMPLE_FIELD_ADDON_VERSION;
 	protected $_min_gravityforms_version = '1.9';

@@ -29,9 +29,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 define( 'GF_SIMPLE_FIELD_ADDON_VERSION', '1.0' );
 
-add_action( 'gform_loaded', array( 'GF_Simple_Field_AddOn_Bootstrap', 'load' ), 5 );
+add_action( 'gform_loaded', array( 'GF_Month_Calculator_Field_AddOn', 'load' ), 5 );
 
-class GF_Simple_Field_AddOn_Bootstrap {
+class GF_Month_Calculator_Field_AddOn {
 
     public static function load() {
 
@@ -39,9 +39,9 @@ class GF_Simple_Field_AddOn_Bootstrap {
             return;
         }
 
-        require_once( 'class-gfmonth-calculator.php' );
+        require_once( 'class-gf-month-calculator.php' );
 
-        GFAddOn::register( 'GFSimpleFieldAddOn' );
+        GFAddOn::register( 'GFMonthCalculatorFieldAddOn' );
     }
 
 }
