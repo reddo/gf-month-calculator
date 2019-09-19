@@ -2,12 +2,14 @@
 /*
 Plugin Name: Gravity Forms Month Calculator Field Add-On
 Plugin URI: http://www.gravityforms.com
-Description: A simple add-on to demonstrate how to use the Add-On Framework to include a new field type.
+Description: An addon to add mont calculator fields to Gravity Forms
 Version: 1.0
-Author: Rocketgenius
-Author URI: http://www.rocketgenius.com
+Author: reddo
+Author URI: http://birdcreation.com
 Text Domain: gf-month-calculator
-Domain Path: /languages
+Domain Path: /languages/
+Original Author: Rocketgenius (http://www.rocketgenius.com)
+GitHub Plugin URI: https://github.com/reddo/gf-month-calculator
 
 ------------------------------------------------------------------------
 Copyright 2012-2016 Rocketgenius Inc.
